@@ -1,0 +1,14 @@
+<p>
+  product works!
+</p>
+<ul>
+  <li *ngFor="let product of iproducts" (click)="showSpec(product)">
+    {{product.ProductID}} - {{product.ProductName | uppercase}}
+  </li>
+</ul>
+<div>{{errorMessage}}</div>
+<input type="text" [(ngModel)]="productId">
+<input type="text" [(ngModel)]="productName">
+<button (click)="save()">Save</button>
+
+<app-child [childData]="iproducts" (childAction)="productAction($event)"></app-child>

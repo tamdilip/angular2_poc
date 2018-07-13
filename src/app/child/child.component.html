@@ -1,0 +1,9 @@
+<p>
+  child works!
+</p>
+
+<ul>
+  <li *ngFor="let product of childData">
+    <div (click)="sendParent(product)">{{product.ProductID}} - {{product.ProductName}}</div>
+  </li>
+</ul>

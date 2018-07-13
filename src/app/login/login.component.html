@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form>
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" [(ngModel)]="username" #user="ngModel" name="username" required class="form-control" placeholder="Username">
+          <div *ngIf="user.errors && user.touched">
+            <div [hidden]="!user.errors.required">
+              Username is required!
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password">
+        </div>
+        <button class="btn btn-default" (click)="login()">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+
